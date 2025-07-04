@@ -1,0 +1,120 @@
+:root {
+     /* -- colors -- */
+     --color-white: #FFFFFF;
+     --color-grey: #949494;
+     --color-red: #FF6155;
+     --color-blue-700: #36384D;
+     --color-blue-800: #242742;
+
+     /* -- gradients -- */
+     --gradient-button: linear-gradient(#FF6A3A, #FF527B);
+
+     /* -- font family -- */
+     --ff: 'Roboto', sans-serif;
+
+     /* -- font sizes -- */
+     --fs-0: .75rem;
+     --fs-100: 1rem;
+     --fs-200: 2.5rem;
+     --fs-300: 3.5rem;
+
+     /* -- font weights -- */
+     --fw-400: 400;
+     --fw-700: 700;
+
+     /* -- line heights -- */
+     --line-height-150: 1.5;
+}
+
+body {
+     display: grid;
+     place-content: center;
+
+     font-family: var(--ff);
+     font-size: var(--fs-100);
+     font-weight: var(--fw-400);
+     line-height: var(--line-height-150);
+     color: var(--color-blue-800);
+     background-color: var(--color-blue-800);
+
+     @media (min-width: 23.5em) {
+          padding-inline: 1em;
+          padding-block: 4.6em;
+     }
+}
+
+h1 {
+     line-height: 1;
+     font-size: var(--fs-200);
+     font-weight: var(--fw-700);
+
+     @media (min-width: 48em) {
+          font-size: var(--fs-300);
+     }
+}
+
+ul {
+     list-style: none;
+}
+
+li {
+     --flow-space: .5em;
+
+     display: flex;
+     gap: var(--list-gap, 1em);
+}
+
+li img {
+     align-self: flex-start;
+}
+
+form {
+     padding-top: 1em;
+}
+
+label {
+     font-size: var(--fs-0);
+     font-weight: var(--fw-700);
+     line-height: var(--line-height-150);
+}
+
+input {
+     width: 100%;
+     outline: none;
+     border-radius: 8px;
+
+     line-height: 1.5;
+     font-size: var(--fs-100);
+     font-weight: var(--fw-400);
+}
+
+input[type="submit"] {
+     border: none;
+     padding-block: 1em;
+     font-weight: var(--fw-700);
+
+     cursor: pointer;
+     color: var(--color-white);
+     background-color: var(--color-blue-800);
+}
+
+input[type="submit"]:active {
+     background: var(--gradient-button);
+}
+
+input[type="submit"]:disabled {
+     opacity: 0.6;
+     cursor: not-allowed;
+}
+
+input[type="email"] {
+     padding: 1em 1.5em;
+     margin-bottom: 1.5em;
+     border: 1px solid var(--color-blue-800);
+}
+
+input[type="email"]:is(:valid) {
+     color: var(--color-blue-800);
+     background-color: var(--color-white);
+     border: 1px solid var(--color-blue-800);
+}

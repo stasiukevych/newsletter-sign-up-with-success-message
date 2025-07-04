@@ -1,0 +1,133 @@
+@import url('reset.css') layer(reset);
+@import url('fonts.css') layer(fonts);
+@import url('global.css') layer(global);
+
+
+@layer reset, fonts, global;
+
+.flow>*+* {
+     margin-top: var(--flow-space, 1.5em);
+}
+
+.visually-hidden {
+     clip: rect(0 0 0 0);
+     clip-path: inset(50%);
+     height: 1px;
+     overflow: hidden;
+     position: absolute;
+     white-space: nowrap;
+     width: 1px;
+}
+
+.subscription {
+     background-color: var(--color-white);
+
+     @media (min-width: 23.5em) {
+          overflow: clip;
+          max-width: 375px;
+          border-radius: 36px;
+          border: 1px solid rgb(21, 21, 21);
+          box-shadow: 0px 15px 60px 0px rgba(0, 0, 0, 0.25);
+     }
+
+     @media (min-width: 48em) {
+          max-width: 608px;
+          padding-block: 2.5em;
+          padding-inline: 2.5em;
+
+          gap: 2.5em;
+          display: grid;
+     }
+
+     @media (min-width: 90em) {
+          max-width: 904px;
+          padding-inline: 2em;
+          padding-block: 1.5em;
+
+          gap: 4em;
+          grid-template-columns: 1fr 1fr;
+     }
+}
+
+.confirmation {
+     height: 100vh;
+     padding-inline: 1.5em;
+     background-color: var(--color-white);
+
+     gap: 2em;
+     display: grid;
+     place-content: center;
+
+     @media (min-width: 23.5em) {
+          height: unset;
+          max-width: 504px;
+          padding-inline: 4em;
+          padding-block: 3.75em;
+
+          border-radius: 36px;
+          border: 1px solid rgb(21, 21, 21);
+          box-shadow: 0px 15px 60px 0px rgba(0, 0, 0, 0.25);
+     }
+}
+
+.subscription__description {
+     padding: 2.5em 1.5em 2.75em;
+
+     @media (min-width: 48em) {
+          padding: unset;
+     }
+
+     @media (min-width: 90em) {
+          order: -1;
+          align-self: center;
+     }
+}
+
+.labels {
+     display: flex;
+     margin-bottom: .5em;
+     justify-content: space-between;
+
+     & .email-error {
+          display: none;
+          color: var(--color-red);
+     }
+}
+
+.form-group:has(:invalid:not(:focus)) {
+     & .labels .email-error {
+          display: flex;
+          animation: shake .2s;
+     }
+
+     & input[type="email"] {
+          color: var(--color-red);
+          border: 1px solid var(--color-red);
+          background-color: rgba(255, 231, 230, 1);
+
+          animation: shake .2s;
+     }
+}
+
+@keyframes shake {
+
+     0%,
+     100% {
+          transform: translateX(0);
+     }
+
+     20%,
+     40%,
+     60%,
+     80% {
+          transform: translateX(-2%);
+     }
+
+     10%,
+     30%,
+     50%,
+     70%,
+     90% {
+          transform: translateX(2%);
+     }
+}

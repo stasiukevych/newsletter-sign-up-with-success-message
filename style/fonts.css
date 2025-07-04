@@ -1,0 +1,17 @@
+/* roboto-regular - latin */
+@font-face {
+     font-display: swap;
+     font-family: 'Roboto';
+     font-style: normal;
+     font-weight: 400;
+     src: url('../assets/fonts/Roboto-Regular.ttf') format('ttf');
+}
+
+/* roboto-bold - latin */
+@font-face {
+     font-display: swap;
+     font-family: 'Roboto';
+     font-style: normal;
+     font-weight: 700;
+     src: url('../assets/fonts/Roboto-Bold.ttf') format('ttf');
+}
