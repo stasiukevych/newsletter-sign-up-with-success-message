@@ -95,17 +95,27 @@
 }
 
 .form-group:has(:invalid:not(:focus)) {
-     & .labels .email-error {
-          display: flex;
-          animation: shake .2s;
-     }
-
      & input[type="email"] {
           color: var(--color-red);
           border: 1px solid var(--color-red);
           background-color: rgba(255, 231, 230, 1);
 
           animation: shake .2s;
+     }
+
+     & input[type="email"]:placeholder-shown {
+          color: var(--color-blue-800);
+          background-color: var(--color-white);
+          border: 1px solid var(--color-blue-800);
+
+          animation: none;
+     }
+}
+
+.form-group:has(:invalid:not(:focus):not(:placeholder-shown)) {
+     & .labels .email-error {
+          animation: shake .2s;
+          display: var(--error-display, flex);
      }
 }
 
